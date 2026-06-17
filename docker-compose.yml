@@ -1,0 +1,16 @@
+services:
+  companion:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: sqlite:////app/data/app.db
+      MODEL_NAME: qwen3.7-plus
+    volumes:
+      - companion-data:/app/data
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+volumes:
+  companion-data:
+
