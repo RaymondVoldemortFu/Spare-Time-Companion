@@ -6,11 +6,8 @@ services:
       DATABASE_URL: sqlite:////app/data/app.db
       MODEL_NAME: qwen3.7-plus
     volumes:
-      - companion-data:/app/data
+      - ./data:/app/data
+      - ./logs:/app/logs
     ports:
-      - "8000:8000"
+      - "80:8000"
     restart: unless-stopped
-
-volumes:
-  companion-data:
-
